@@ -4,25 +4,25 @@ class Question_ALL{
         int [][] ratings = { {4,6,2,5},{7,9,4,8},{6,9,3,7}};
         //Q1
         System.out.println("Q1");
-        int rating0 = movieAvgRating(ratings,0);
+        double rating0 = movieAvgRating(ratings,0);
         System.out.println("Movie zero's average rating: " + rating0);
-        int rating1 = movieAvgRating(ratings,1);
+        double rating1 = movieAvgRating(ratings,1);
         System.out.println("Movie one's average rating: " + rating1);
-        int rating2 = movieAvgRating(ratings,2);
+        double rating2 = movieAvgRating(ratings,2);
         System.out.println("Movie two's average rating: " + rating2);
-        int rating3 = movieAvgRating(ratings,3);
+        double rating3 = movieAvgRating(ratings,3);
         System.out.println("Movie three's average rating: " + rating3);
         // Q2
         System.out.println("Q2");
-        int ratingr0 = reviewerAvgRating(ratings,0);
+        double ratingr0 = reviewerAvgRating(ratings,0);
         System.out.println("Reviewer zero's average rating: " + ratingr0);
-        int ratingr1 = reviewerAvgRating(ratings,1);
+        double ratingr1 = reviewerAvgRating(ratings,1);
         System.out.println("Reviewer one's average rating: " + ratingr1);
-        int ratingr2 = reviewerAvgRating(ratings,2);
+        double ratingr2 = reviewerAvgRating(ratings,2);
         System.out.println("Reviewer two's average rating: " + ratingr2);
         //Q3
         System.out.println("Q3");
-        int total = avgRating2018(ratings);
+        double total = avgRating2018(ratings);
         System.out.println("Average Rating for 2018: " + ratings);
         //Q4
         System.out.println("Q4");
@@ -38,15 +38,13 @@ class Question_ALL{
     int array) as a parameter and another int 
     that represents a particular movie. Return the average
     rating for that movie.*/
-    public static int movieAvgRating(int[][] ratings, int movie){
+    public static double movieAvgRating(int[][] ratings, int movie){
         double sum = 0;
-        double rate = Double.valueOf(ratings[0].length);
-        
+
         for(int r = 0; r<ratings.length;r++){
-            sum = sum + ratings[r][movie];
+            sum += ratings[r][movie];
         }
-        double i = Double.valueOf(sum/rate);
-        return i;
+        return sum/ratings.length;
     }
 
     /*Question 2: Write a method that takes a Rotten Potato 
@@ -54,28 +52,27 @@ class Question_ALL{
     and another int that represents a particular movie 
     reviewer. Return the average rating for that
     particular reviewer.*/
-    public static int reviewerAvgRating(int[][] ratings, int reviewer){
-        int sum = 0;
+    public static double reviewerAvgRating(int[][] ratings, int reviewer){
+        double sum = 0;
         for(int c = 0; c<ratings[0].length;c++){
             sum += ratings[reviewer][c];
         }
-        return sum/ratings.length;
+        return sum/ratings[0].length;
     }
 
     /*Question 3: Write a method that takes a 
      * Rotten Potato database (2D int array) as a parameter.
     Return the average movie rating for all movies and 
     all reviewers in the database.*/
-    public static int avgRating2018(int[][] ratings){
-        int sum = 0;
+    public static double avgRating2018(int[][] ratings){
+        double sum = 0;
         for(int r = 0; r<ratings.length;r++){
             for(int c = 0; c<ratings[0].length;c++){
                 sum += ratings[r][c];
 
             }
-
         }
-        return sum/ratings.length;
+        return sum/(ratings.length*ratings[0].length);
     }
 
     /*Question 4: Write a method that takes a Rotten Potato database (2D int array) as a parameter.
