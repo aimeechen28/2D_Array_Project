@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Question_ALL
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=ratings\ movie
+comment2.target=int\ movieAvgRating(int[][],\ int)
+comment2.text=Question\ 1\:\ Write\ the\ method\ movieAverageRating()\ \n\ that\ takes\ a\ Rotten\ Potato\ database\ (2D\n\ \ \ \ int\ array)\ as\ a\ parameter\ and\ another\ int\ \n\ \ \ \ that\ represents\ a\ particular\ movie.\ Return\ the\ average\nrating\ for\ that\ movie.
+comment3.params=ratings\ reviewer
+comment3.target=int\ reviewerAvgRating(int[][],\ int)
+comment3.text=Question\ 2\:\ Write\ a\ method\ that\ takes\ a\ Rotten\ Potato\ \n\ database\ (2D\ int\ array)\ as\ a\ parameter\n\ \ \ \ and\ another\ int\ that\ represents\ a\ particular\ movie\ \n\ \ \ \ reviewer.\ Return\ the\ average\ rating\ for\ that\nparticular\ reviewer.
+comment4.params=ratings
+comment4.target=int\ avgRating2018(int[][])
+comment4.text=Question\ 3\:\ Write\ a\ method\ that\ takes\ a\ \n\ Rotten\ Potato\ database\ (2D\ int\ array)\ as\ a\ parameter.\n\ \ \ \ Return\ the\ average\ movie\ rating\ for\ all\ movies\ and\ \nall\ reviewers\ in\ the\ database.
+comment5.params=ratings
+comment5.target=int\ hardestRater2018(int[][])
+comment5.text=Question\ 4\:\ Write\ a\ method\ that\ takes\ a\ Rotten\ Potato\ database\ (2D\ int\ array)\ as\ a\ parameter.\nReturn\ the\ index\ of\ the\ hardest\ reviewer\ (the\ reviewer\ with\ the\ lowest\ average\ ranking).
+comment6.params=ratings
+comment6.target=int\ worstMovie2018(int[][])
+comment6.text=Question\ 5\:\ Write\ a\ method\ that\ takes\ a\ Rotten\ Potato\ database\ (2D\ int\ array)\ as\ a\ parameter.\nReturn\ the\ index\ of\ the\ worst\ movie\ (the\ movie\ with\ the\ lowest\ average\ ranking).
+numComments=7
