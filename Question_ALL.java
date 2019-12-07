@@ -3,7 +3,7 @@ class Question_ALL{
     public static void main(String[] args){
         int [][] ratings = { {4,6,2,5},{7,9,4,8},{6,9,3,7}};
         //Q1
-        System.out.println("Q1");
+        System.out.println("Q1:");
         double rating0 = movieAvgRating(ratings,0);
         System.out.println("Movie zero's average rating: " + rating0);
         double rating1 = movieAvgRating(ratings,1);
@@ -13,7 +13,7 @@ class Question_ALL{
         double rating3 = movieAvgRating(ratings,3);
         System.out.println("Movie three's average rating: " + rating3);
         // Q2
-        System.out.println("Q2");
+        System.out.println("Q2:");
         double ratingr0 = reviewerAvgRating(ratings,0);
         System.out.println("Reviewer zero's average rating: " + ratingr0);
         double ratingr1 = reviewerAvgRating(ratings,1);
@@ -21,16 +21,16 @@ class Question_ALL{
         double ratingr2 = reviewerAvgRating(ratings,2);
         System.out.println("Reviewer two's average rating: " + ratingr2);
         //Q3
-        System.out.println("Q3");
+        System.out.println("Q3:");
         double total = avgRating2018(ratings);
-        System.out.println("Average Rating for 2018: " + ratings);
+        System.out.println("Average Rating for 2018: " + total);
         //Q4
-        System.out.println("Q4");
+        System.out.println("Q4:");
         int hardRater = hardestRater2018(ratings);
-        System.out.println("The hardest rater is number: " + ratings);
-        System.out.println("Q5");
+        System.out.println("The hardest rater is number: " + hardRater);
+        System.out.println("Q5:");
         int worstMovie = worstMovie2018(ratings);
-        System.out.println("The worst movie is number: " + ratings);
+        System.out.println("The worst movie is number: " + worstMovie);
     }
 
     /*Question 1: Write the method movieAverageRating() 
@@ -91,13 +91,13 @@ class Question_ALL{
         for(int c = 0; c<ratings[0].length;c++){
             sum3 += ratings[2][c];
         }
-        if(sum1>sum2&&sum1>sum3){
+        if(sum1<sum2&&sum1<sum3){
             hardestReviewer = 0;
         }
-        if(sum2>sum3&&sum2>sum1){
+        else if(sum2<sum3&&sum2<sum1){
             hardestReviewer = 1;
         }
-        if(sum3>sum2&&sum3>sum1){
+        else if(sum3<sum2&&sum3<sum1){
             hardestReviewer = 2;
         }
 
@@ -111,6 +111,7 @@ class Question_ALL{
         int sum1 = 0;
         int sum2 = 0;
         int sum3 = 0;
+        int sum4 = 0;
         for(int r = 0; r<ratings.length;r++){
             sum1 += ratings[r][0];
         }
@@ -120,16 +121,21 @@ class Question_ALL{
         for(int r = 0; r<ratings.length;r++){
             sum3 += ratings[r][2];
         }
-        if(sum1>sum2&&sum1>sum3){
+        for(int r = 0; r<ratings.length;r++){
+            sum4 += ratings[r][3];
+        }
+        if(sum1<sum2&&sum1<sum3&&sum1<sum4){
             worstMovie = 0;
         }
-        if(sum2>sum3&&sum2>sum1){
+        if(sum2<sum3&&sum2<sum1&&sum2<sum4){
             worstMovie = 1;
         }
-        if(sum3>sum2&&sum3>sum1){
+        if(sum3<sum2&&sum3<sum1&&sum3<sum4){
             worstMovie = 2;
         }
-
+        if(sum4<sum2&&sum4<sum1&&sum4<sum3){
+            worstMovie = 3;
+        }
         return worstMovie;
     }
 
